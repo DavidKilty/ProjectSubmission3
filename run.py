@@ -93,7 +93,7 @@ def play_game():
         print("\nYour turn!")
         row, col = get_player_input()
         crush = take_shot(computer_board, row, col)
-        print(f"\nShot at ({row}, {col}): {'Crush' if cursh else 'Miss'}")
+        print(f"\nShot at ({row}, {col}): {'Crush' if crush else 'Miss'}")
 
         if all_snakes_crushed(computer_board):
             print("Congratulations! You crushed all the snakes!")
@@ -103,7 +103,7 @@ def play_game():
         print("\nComputer's turn!")
         computer_turn(player_board)
 
-        if all_skanes_crushed(player_board):
+        if all_snakes_crushed(player_board):
             print("You lost! The computer crushed all your snakes!")
             break
 
