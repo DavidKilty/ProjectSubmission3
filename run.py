@@ -11,7 +11,7 @@ def print_board(board):
     for row in board:
         print(' '.join(row))
 
-def snake(board, snake_lenght):
+def place_snake(board, snake_length):
     placed = False
     while not placed:
         orientation = random.choice(['H', 'V'])
@@ -79,3 +79,33 @@ def computer_turn(board):
             print(f"Computer shot at ({row}, {col}): {'Crush' if crush else 'Miss'}")
             break 
     
+def play_game():
+    player_board = setup_board()
+    computer_board = setup_board()
+
+    while True:
+        print("\nPlayer's Board:")
+        print_board(player_board)
+        print("\nComputer's Board:")
+        print_board([['~' if cell == 'S' else cell for cell in row] for row in computer_board])
+
+        # Player turn
+        print("\nYour turn!")
+        row, col = get_player_input()
+        crush = take_shot(computer_board, row, col)
+        print(f"\nShot at ({row}, {col}): {'Crush' if cursh else 'Miss'}")
+
+        if all_snakes_crushed(computer_board):
+            print("Congratulations! You crushed all the snakes!")
+            break
+
+        # Computer turn
+        print("\nComputer's turn!")
+        computer_turn(player_board)
+
+        if all_skanes_crushed(player_board):
+            print("You lost! The computer crushed all your snakes!")
+            break
+
+# Run game
+play_game()
