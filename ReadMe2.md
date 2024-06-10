@@ -6,25 +6,27 @@
 
 PLACE PHOTO
 
-
 ## How To Play 
 
-1.
-2.
-3.
-4.
-5.
+1. Guess where the computer as their snakes hidden in their pit
+2. The rows are labelled 0 to 4 not 1 to 5 
+3. Type in two spaced out digits, e.g: 2 3. 
+4. See if you were able to guess correctly and haver crushed the computers snakes
+5. Repeat until a winner is declarted! 
 
 PLACE PHOTO 
 
-
 ## Features 
+
+This is based of the popular Battle Ships game, but with an added twist. 
 
 ###  Features - Exisiting Features
 
+The board is a 5 by 5 grid but labeeled 0 to 4.
+
 ###  Features - Future Features 
 
-## Data Model 
+The board could be extended to bigger than it currently is. 
 
 ## Testing 
 
