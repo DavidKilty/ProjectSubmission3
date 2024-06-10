@@ -53,6 +53,7 @@ def take_shot(board, row, col):
         board[row][col] = 'O'  # Miss
         return False
     return None  # Invalid step
+
 def all_snakes_crushed(board):
     return all(cell != 'S' for row in board for cell in row)
 
@@ -68,3 +69,13 @@ def get_player_input():
             return row, col
         except ValueError as e:
             print(e)
+
+def computer_turn(board):
+    while True:
+        row = random.randint(0, BOARD_SIZE - 1)
+        col = random.randint(0, BOARD_SIZE - 1)
+        if board[row][col] in ('~', 'S'):
+            crush = take_shot(board, row, col)
+            print(f"Computer shot at ({row}, {col}): {'Crush' if crush else 'Miss'}")
+            break 
+    
