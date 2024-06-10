@@ -33,10 +33,10 @@ def snake(board, snake_lenght):
 def setup_board():
     board = create_board(BOARD_SIZE)
     for snake_length in SNAKE_LENGTHS:
-    place_snake(board, snake_length)
+        place_snake(board, snake_length)
     return board
 
-# Example usage
+# Example use
 player_board = setup_board()
 computer_board = setup_board()
 
@@ -47,12 +47,24 @@ print_board(computer_board)
 
 def take_shot(board, row, col):
     if board[row][col] == 'S':
-        board[row][col] = 'X'  # Hit
+        board[row][col] = 'X'  # Crush
         return True
     elif board[row][col] == '~':
         board[row][col] = 'O'  # Miss
         return False
-    return None  # Invalid shot
+    return None  # Invalid step
 def all_snakes_crushed(board):
     return all(cell != 'S' for row in board for cell in row)
 
+def get_player_input():
+    while True:
+        try:
+            coords = input("Enter row and column (e.g., 2 3): ").split()
+            if len(coords) != 2:
+                raise ValueError("Invalid input format.")
+            row, col = map(int, coords)
+            if row < 0 or row >= BOARD_SIZE or col < 0 or col >= BOARD_SIZE:
+                raise ValueError("Coordinates out of bounds.")
+            return row, col
+        except ValueError as e:
+            print(e)
