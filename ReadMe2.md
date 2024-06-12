@@ -18,11 +18,34 @@ PLACE PHOTO
 
 ## Features 
 
-This is based of the popular Battle Ships game, but with an added twist. 
+This is based of the popular Battle Ships game, but with an added twist. Here a few images for you to get a feel of the game.
+
+PLACE PHOTO 
 
 ###  Features - Exisiting Features
 
-The board is a 5 by 5 grid but labeeled 0 to 4.
+* Randomly generated board.
+
+ - The board is a 5 by 5 grid but, labelled 0 to 4 (Important to remember when playing to avoid puttin in false data).
+ - The user cannot see where the computer has generated the position of their "snakes" in their "pit" (obviously, as it would be much fun otherwise)
+
+PLACE PHOTO 
+
+* The user plays against the comuputer 
+
+* The python code therefor accepts data input from the user 
+
+* The computer also keeps track of the socres. 
+
+PLACE PHOTO 
+
+* Validates input and checks for errors 
+
+ - Remember earlier, use numbers 0 to 4 and not 1 to 5. The computer will only accpet numbers 0 to 4 and a number lower than 0 or higherr than 4 will return and eror message 
+
+ - Also, the computer will only accept numbers, not letts, emoticons etc. 
+
+ PLACE PHOTO 
 
 ###  Features - Future Features 
 
