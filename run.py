@@ -4,12 +4,15 @@ import random
 BOARD_SIZE = 5
 SNAKE_LENGTHS = [2, 3]  # Example of snake lengths
 
+
 def create_board(size):
     return [['~' for _ in range(size)] for _ in range(size)]
+
 
 def print_board(board):
     for row in board:
         print(' '.join(row))
+
 
 def place_snake(board, snake_length):
     placed = False
@@ -30,11 +33,13 @@ def place_snake(board, snake_length):
                     board[row + i][col] = 'S'
                 placed = True
 
+
 def setup_board():
     board = create_board(BOARD_SIZE)
     for snake_length in SNAKE_LENGTHS:
         place_snake(board, snake_length)
     return board
+
 
 # Example use
 player_board = setup_board()
@@ -45,6 +50,7 @@ print_board(player_board)
 print("\nComputer's Board:")
 print_board(computer_board)
 
+
 def take_shot(board, row, col):
     if board[row][col] == 'S':
         board[row][col] = 'X'  # Crush
@@ -54,8 +60,10 @@ def take_shot(board, row, col):
         return False
     return None  # Invalid step
 
+
 def all_snakes_crushed(board):
     return all(cell != 'S' for row in board for cell in row)
+
 
 def get_player_input():
     while True:
@@ -70,15 +78,18 @@ def get_player_input():
         except ValueError as e:
             print(e)
 
+
 def computer_turn(board):
     while True:
         row = random.randint(0, BOARD_SIZE - 1)
         col = random.randint(0, BOARD_SIZE - 1)
         if board[row][col] in ('~', 'S'):
             crush = take_shot(board, row, col)
-            print(f"Computer shot at ({row}, {col}): {'Crush' if crush else 'Miss'}")
-            break 
-    
+        print(f"Computer shot at ({row}, {col}):
+              {'Crush' if crush else 'Miss'}")
+        break
+
+
 def play_game():
     player_board = setup_board()
     computer_board = setup_board()
@@ -87,7 +98,8 @@ def play_game():
         print("\nPlayer's Board:")
         print_board(player_board)
         print("\nComputer's Board:")
-        print_board([['~' if cell == 'S' else cell for cell in row] for row in computer_board])
+        print_board([['~' if cell == 'S' else cell
+                    for cell in row] for row in computer_board])
 
         # Player turn
         print("\nYour turn!")
@@ -106,6 +118,7 @@ def play_game():
         if all_snakes_crushed(player_board):
             print("You lost! The computer crushed all your snakes!")
             break
+
 
 # Run game
 play_game()

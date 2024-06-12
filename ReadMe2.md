@@ -6,6 +6,8 @@
 
 PLACE PHOTO
 
+![contact image](assets/Game.png)
+
 ## How To Play 
 
 1. Guess where the computer as their snakes hidden in their pit
@@ -14,13 +16,13 @@ PLACE PHOTO
 4. See if you were able to guess correctly and haver crushed the computers snakes
 5. Repeat until a winner is declarted! 
 
-PLACE PHOTO 
+![contact image](assets/Game.png)
 
 ## Features 
 
 This is based of the popular Battle Ships game, but with an added twist. Here a few images for you to get a feel of the game.
 
-PLACE PHOTO 
+![contact image](assets/GameWithInput.png)
 
 ###  Features - Exisiting Features
 
@@ -37,7 +39,7 @@ PLACE PHOTO
 
 * The computer also keeps track of the socres. 
 
-PLACE PHOTO 
+![contact image](assets/GameTurn.png)
 
 * Validates input and checks for errors 
 
@@ -45,7 +47,7 @@ PLACE PHOTO
 
  - Also, the computer will only accept numbers, not letts, emoticons etc. 
 
- PLACE PHOTO 
+![contact image](assets/GameEnd.png)
 
 ###  Features - Future Features 
 
@@ -73,4 +75,4 @@ I used materials for writing game code from online source such as:
 * Code Institute 
 * Geeks For Geeks 
 * Stack Overflow
-* Code Review Stack Exchange
+* Code Review Stack Exchange  
