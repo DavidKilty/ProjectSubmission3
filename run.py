@@ -41,16 +41,6 @@ def setup_board():
     return board
 
 
-
-player_board = setup_board()
-computer_board = setup_board()
-
-print("Player's Board:")
-print_board(player_board)
-print("\nComputer's Board:")
-print_board(computer_board)
-
-
 def take_shot(board, row, col):
     if board[row][col] == 'S':
         board[row][col] = 'X'  # Crush
