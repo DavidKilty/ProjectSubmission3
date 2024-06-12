@@ -49,19 +49,28 @@ PLACE PHOTO
 
 ###  Features - Future Features 
 
-The board could be extended to bigger than it currently is. 
+* 
+
+ - The board, or pit, could be extended to bigger than it currently is. 
+
+ - Allow the user to decide where they place their snakes. 
 
 ## Testing 
 
-###  Testing - Solved Bugs 
+I used the manual testing methods for checking my code: 
 
-###  Testing - Remaining Bugs 
-
-###  Testing - Validator Test
+- PEP8 and checked there were no issues 
+- Feeding it invalid data, outside the previosly stated bounds, to see how it responds. 
+- Use my local terminal in my IED 
 
 ## Deployment 
 
+
+
 ## Credits 
 
-* I used materials for writing game code from online source such as, Geeks For Geeks, Stack Overflow, Code Review Stack Exchange, 
-* 
+I used materials for writing game code from online source such as: 
+* Code Institute 
+* Geeks For Geeks 
+* Stack Overflow
+* Code Review Stack Exchange
