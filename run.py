@@ -2,7 +2,7 @@ import random
 
 # Constants
 BOARD_SIZE = 5
-SNAKE_LENGTHS = [2, 3]  # Example of snake lengths
+SNAKE_LENGTHS = [2, 3]  
 
 
 def create_board(size):
@@ -85,8 +85,7 @@ def computer_turn(board):
         col = random.randint(0, BOARD_SIZE - 1)
         if board[row][col] in ('~', 'S'):
             crush = take_shot(board, row, col)
-        print(f"Computer shot at ({row}, {col}):
-              {'Crush' if crush else 'Miss'}")
+        print(f"Computer shot at ({row}, {col}):{'Crush' if crush else 'Miss'}")
         break
 
 
