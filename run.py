@@ -1,6 +1,6 @@
 import random
 
-# Constants
+
 BOARD_SIZE = 5
 SNAKE_LENGTHS = [2, 3]  
 
@@ -41,7 +41,7 @@ def setup_board():
     return board
 
 
-# Example use
+
 player_board = setup_board()
 computer_board = setup_board()
 
@@ -78,15 +78,14 @@ def get_player_input():
         except ValueError as e:
             print(e)
 
-
 def computer_turn(board):
     while True:
         row = random.randint(0, BOARD_SIZE - 1)
         col = random.randint(0, BOARD_SIZE - 1)
         if board[row][col] in ('~', 'S'):
             crush = take_shot(board, row, col)
-        print(f"Computer shot at ({row}, {col}):{'Crush' if crush else 'Miss'}")
-        break
+            print(f"Computer shot at ({row}, {col}):{'Crush' if crush else 'Miss'}")
+            break
 
 
 def play_game():
