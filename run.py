@@ -6,9 +6,13 @@ print("Keep going until you, or the computer, has won the game!")
 print()
 
 import random
+import os
 
 BOARD_SIZE = 5
 SNAKE_LENGTHS = [2, 3]  
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def create_board(size):
     return [['~' for _ in range(size)] for _ in range(size)]
@@ -89,6 +93,7 @@ def play_game():
     computer_shots = set()
 
     while True:
+        clear_screen()
         print("\nPlayer's Board:")
         print_board(player_board)
         print("\nComputer's Board:")
@@ -100,11 +105,13 @@ def play_game():
         player_shots.add((row, col))
         crush = take_shot(computer_board, row, col)
         print(f"\nShot at ({row + 1}, {col + 1}): {'Crush' if crush else 'Miss'}")
+        
 
         if all_snakes_crushed(computer_board):
             print("Congratulations! You crushed all the snakes!")
             break
 
+        
        
         print("\nComputer's turn!")
         computer_turn(player_board, computer_shots)
