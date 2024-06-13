@@ -25,17 +25,17 @@ PHOTO
 
 ###  Features - Exisiting Features
 
-* Randomly generated board.
- - The board is a 5 by 5 grid but.
- - The user cannot see where the computer has generated the position of their snakes (obviously, as it would be much fun otherwise).
+ - Randomly generated board.
+ - The board is a 5 by 5 grid.
+ - The user cannot see where the computer has generated the position of their snakes (obviously, as it would not be much fun otherwise).
 
 PHOTO 
 
 * The user plays against the comuputer.
 * The python code therefor accepts data input from the user.
-* The computer also keeps track of the socres. 
+* The computer also keeps track of the scores.
 * It will not let you enter same data twice. 
-* It will not let you enter erronious data, out side the digits of 1 thgroug 5 and the word 'yes' or 'no'. 
+* It will not let you enter erronious data, outside the digits of 1 through 5 and the word 'yes' or 'no'. 
 
 PHOTO
 
@@ -58,22 +58,22 @@ I used the manual testing methods for checking my code:
 ### Bugs deteced
 
 - PEP8 informed of many indentation errors, most of which were resolved.
-- Í previoulsy tried to add command which I had forgotten to define, therefor sending back an error.
+- I previoulsy tried to add command which I had forgotten to define, therefor sending back an error.
 
 ### Bugs resolved 
 
 - Fixed indent errors with PEP8
 - Made sure I had all required "def" 
 
-### Bugs not resolveds 
+### Bugs not resolved 
 
-- PEP8 stated code had too many character on some lines, but does not interfere with ocverall product
+- PEP8 stated code had too many character on some lines, but does not interfere with overall product. 
 
 ## Deployment 
 
 1. Go to Heroku dash board 
 2. Click on 'Create a new Heroku app'
-3. Set the buildbacks to Python and NodeJS in that order
+3. Set the build packs to Python and NodeJS in that order
 4. Link you GitHub repo to Heroku app 
 5. Click on Deploy!
 
