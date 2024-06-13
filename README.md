@@ -60,10 +60,14 @@ I used the manual testing methods for checking my code:
 - PEP8 informed of many indentation errors, most of which were resolved.
 - Í previoulsy tried to add command which I had forgotten to define, therefor sending back an error.
 
-### Bug resolved 
+### Bugs resolved 
 
 - Fixed indent errors with PEP8
 - Made sure I had all required "def" 
+
+### Bugs not resolveds 
+
+- PEP8 stated code had too many character on some lines, but does not interfere with ocverall product
 
 ## Deployment 
 

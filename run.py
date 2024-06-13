@@ -1,10 +1,3 @@
-print("Welcome to the Snake Pit.")
-print("In this game, you will play against the computer by trying to guess where they have placed their 'snakes' on their board.")
-print("The board is a 5 x 5 frame, and you can specify where you think the snakes are positioned by typing in two different numbers, both between 1 and 5.")
-print("If your guess matches up with where the snakes are laying on the opposing board, you win.")
-print("Keep going until you, or the computer, has won the game!")
-print()
-
 import random
 import os
 
@@ -103,7 +96,6 @@ def play_game():
     computer_shots = set()
 
     while True:
-        clear_screen()
         print("\nPlayer's Board:")
         print_board(player_board)
         print("\nComputer's Board:")
@@ -114,6 +106,7 @@ def play_game():
         player_shots.add((row, col))
         crush = take_shot(computer_board, row, col)
         print(f"\nShot at ({row + 1}, {col + 1}): {'Crush' if crush else 'Miss'}")
+        clear_screen()
 
         if all_snakes_crushed(computer_board):
             print("Congratulations! You crushed all the snakes!")
@@ -127,10 +120,16 @@ def play_game():
             break
 
 while True:
-   play_game()
-   play_again = input("Would you like to play again? (yes/no): ").strip().lower()
-   if play_again != 'yes':
-      print("Good Bye")
-      break
-   if play_again != 'no':
-      play_game()
+    clear_screen() 
+    print("Welcome to the Snake Pit.")
+    print("In this game, you will play against the computer by trying to guess where they have placed their 'snakes' on their board.")
+    print("The board is a 5 x 5 frame, and you can specify where you think the snakes are positioned by typing in two different numbers, both between 1 and 5.")
+    print("If your guess matches up with where the snakes are laying on the opposing board, you win.")
+    print("Keep going until you, or the computer, has won the game!")
+    print()
+    input("press enter to continue")
+    play_game()
+    play_again = input("Would you like to play again? (yes/no): ").strip().lower()
+    if play_again != 'yes':
+        print("Good Bye")
+        break
