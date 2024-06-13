@@ -1,3 +1,11 @@
+
+print("Welcome to the Snake Pit.")
+print("In this game, you will play against the computer by trying to guess where they have placed their 'snakes' on their board.")
+print("The board is a 5 x 5 frame, and you can specify where you think the snakes are positioned by typing in two different numbers, both between 1 and 5.")
+print("If your guess matches up with where the snakes are laying on the opposing board, you win.")
+print("Keep going until you, or the computer, has won the game!")
+print()
+
 import random
 
 
@@ -76,15 +84,6 @@ def computer_turn(board):
             crush = take_shot(board, row, col)
             print(f"Computer shot at ({row}, {col}):{'Crush' if crush else 'Miss'}")
             break
-
-
-def play_game():
-    print("Welcome to the Snake Pit.")
-    print("In this game, you will play against the computer by trying to guess where they have placed their 'snakes' on their board.")
-    print("The board is a 5 x 5 frame, and you can specify where you think the snakes are positioned by typing in two different numbers, both between 1 and 5.")
-    print("If your guess matches up with where the snakes are laying on the opposing board, you win.")
-    print("Keep going until you, or the computer, has won the game!")
-    print()
 
 
 def play_game():
