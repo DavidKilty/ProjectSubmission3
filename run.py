@@ -113,5 +113,11 @@ def play_game():
             print("You lost! The computer crushed all your snakes!")
             break
 
-
-play_game()
+while True:
+   play_game()
+   play_again = input("Would you like to play again? (yes/no): ").strip().lower()
+   if play_again != 'yes':
+      print("Good Bye")
+      break
+   if play_again != 'no':
+      play_game()
