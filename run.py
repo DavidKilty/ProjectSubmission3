@@ -18,8 +18,9 @@ def create_board(size):
 
 
 def print_board(board):
-    for row in board:
-        print(' '.join(row))
+    print("  " + " ".join(str(i+1) for i in range(BOARD_SIZE)))
+    for idx, row in enumerate(board):
+        print(str(idx + 1) + " " + ' '.join(row))
 
 
 def place_snake(board, snake_length):
@@ -70,9 +71,9 @@ def get_player_input():
             if len(coords) != 2:
                 raise ValueError("Invalid input format.")
             row, col = map(int, coords)
-            if row < 0 or row >= BOARD_SIZE or col < 0 or col >= BOARD_SIZE:
+            if row < 1 or row > BOARD_SIZE or col < 1 or col > BOARD_SIZE:
                 raise ValueError("Coordinates out of bounds.")
-            return row, col
+            return row - 1, col - 1
         except ValueError as e:
             print(e)
 
@@ -82,7 +83,7 @@ def computer_turn(board):
         col = random.randint(0, BOARD_SIZE - 1)
         if board[row][col] in ('~', 'S'):
             crush = take_shot(board, row, col)
-            print(f"Computer shot at ({row}, {col}):{'Crush' if crush else 'Miss'}")
+            print(f"Computer shot at ({row + 1}, {col + 1}): {'Crush' if crush else 'Miss'}")  # Added +1 for display
             break
 
 
@@ -92,30 +93,25 @@ def play_game():
 
     while True:
         print("\nPlayer's Board:")
-        print_board(player_board)
+        print_board (player_board)
         print("\nComputer's Board:")
-        print_board([['~' if cell == 'S' else cell
-                    for cell in row] for row in computer_board])
+        print_board([['~' if cell == 'S' else cell for cell in row] 
+                    for row in computer_board])
 
-        # Player turn
         print("\nYour turn!")
         row, col = get_player_input()
         crush = take_shot(computer_board, row, col)
-        print(f"\nShot at ({row}, {col}): {'Crush' if crush else 'Miss'}")
+        print(f"\nShot at ({row + 1}, {col + 1}): {'Crush' if crush else 'Miss'}")  # Added +1 for display
 
         if all_snakes_crushed(computer_board):
             print("Congratulations! You crushed all the snakes!")
             break
 
-        # Computer turn
         print("\nComputer's turn!")
         computer_turn(player_board)
 
         if all_snakes_crushed(player_board):
             print("You lost! The computer crushed all your snakes!")
             break
-
-
-# Run game
 
 play_game()
