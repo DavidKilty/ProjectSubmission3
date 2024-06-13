@@ -1,4 +1,3 @@
-
 print("Welcome to the Snake Pit.")
 print("In this game, you will play against the computer by trying to guess where they have placed their 'snakes' on their board.")
 print("The board is a 5 x 5 frame, and you can specify where you think the snakes are positioned by typing in two different numbers, both between 1 and 5.")
@@ -8,20 +7,16 @@ print()
 
 import random
 
-
 BOARD_SIZE = 5
 SNAKE_LENGTHS = [2, 3]  
 
-
 def create_board(size):
     return [['~' for _ in range(size)] for _ in range(size)]
-
 
 def print_board(board):
     print("  " + " ".join(str(i+1) for i in range(BOARD_SIZE)))
     for idx, row in enumerate(board):
         print(str(idx + 1) + " " + ' '.join(row))
-
 
 def place_snake(board, snake_length):
     placed = False
@@ -42,13 +37,11 @@ def place_snake(board, snake_length):
                     board[row + i][col] = 'S'
                 placed = True
 
-
 def setup_board():
     board = create_board(BOARD_SIZE)
     for snake_length in SNAKE_LENGTHS:
         place_snake(board, snake_length)
     return board
-
 
 def take_shot(board, row, col):
     if board[row][col] == 'S':
@@ -59,12 +52,10 @@ def take_shot(board, row, col):
         return False
     return None  # Invalid step
 
-
 def all_snakes_crushed(board):
     return all(cell != 'S' for row in board for cell in row)
 
-
-def get_player_input():
+def get_player_input(shots_taken):
     while True:
         try:
             coords = input("Enter row and column (e.g., 2 3): ").split()
@@ -73,45 +64,54 @@ def get_player_input():
             row, col = map(int, coords)
             if row < 1 or row > BOARD_SIZE or col < 1 or col > BOARD_SIZE:
                 raise ValueError("Coordinates out of bounds.")
-            return row - 1, col - 1
+            row, col = row - 1, col - 1  
+            if (row, col) in shots_taken:
+                raise ValueError("You have already targeted these coordinates.")
+            return row, col
         except ValueError as e:
             print(e)
 
-def computer_turn(board):
+def computer_turn(board, shots_taken):
     while True:
         row = random.randint(0, BOARD_SIZE - 1)
         col = random.randint(0, BOARD_SIZE - 1)
-        if board[row][col] in ('~', 'S'):
+        if (row, col) not in shots_taken and board[row][col] in ('~', 'S'):
             crush = take_shot(board, row, col)
-            print(f"Computer shot at ({row + 1}, {col + 1}): {'Crush' if crush else 'Miss'}")  # Added +1 for display
+            shots_taken.add((row, col))
+            print(f"Computer shot at ({row + 1}, {col + 1}): {'Crush' if crush else 'Miss'}")
             break
-
 
 def play_game():
     player_board = setup_board()
     computer_board = setup_board()
 
+    player_shots = set()
+    computer_shots = set()
+
     while True:
         print("\nPlayer's Board:")
-        print_board (player_board)
+        print_board(player_board)
         print("\nComputer's Board:")
-        print_board([['~' if cell == 'S' else cell for cell in row] 
-                    for row in computer_board])
+        print_board([['~' if cell == 'S' else cell for cell in row] for row in computer_board])
 
+        
         print("\nYour turn!")
-        row, col = get_player_input()
+        row, col = get_player_input(player_shots)
+        player_shots.add((row, col))
         crush = take_shot(computer_board, row, col)
-        print(f"\nShot at ({row + 1}, {col + 1}): {'Crush' if crush else 'Miss'}")  # Added +1 for display
+        print(f"\nShot at ({row + 1}, {col + 1}): {'Crush' if crush else 'Miss'}")
 
         if all_snakes_crushed(computer_board):
             print("Congratulations! You crushed all the snakes!")
             break
 
+       
         print("\nComputer's turn!")
-        computer_turn(player_board)
+        computer_turn(player_board, computer_shots)
 
         if all_snakes_crushed(player_board):
             print("You lost! The computer crushed all your snakes!")
             break
+
 
 play_game()
