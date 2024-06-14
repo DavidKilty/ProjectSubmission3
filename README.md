@@ -9,9 +9,9 @@
 
 ## How To Play 
 
-1. Guess where the computer has their snakes placed in their board.
+1. Guess where the computer has their snakes placed on their board.
 2. The rows are labeled 1 through 5 
-3. Type in two spaced-out digits e.g: "2 3". 
+3. Type in two spaced-out digits e.g.: "2 3". 
 4. See if you were able to guess correctly and have crushed the computer snakes
 5. Repeat until a winner is declared!
 
@@ -19,12 +19,12 @@
 
 ## Features 
 
-This is based off the popular Battle Ships game, but with an added twist. Here a few images for you to get a feel of the game.
+This is based on the popular Battle Ships game, but with an added twist. Here are a few images for you to get a feel of the game.
 
 ![contactimage](assets/GamePlay.png)
 
 
-###  Features - Exisiting Features
+###  Features - Existing Features
 
  - Randomly generated board.
  - The board is a 5 by 5 grid.
@@ -32,11 +32,11 @@ This is based off the popular Battle Ships game, but with an added twist. Here a
 
 ![contactimage](assets/GameInvalidInput.png) 
 
-* The user plays against the comuputer.
-* The python code therefor accepts data input from the user.
+* The user plays against the computer.
+* The Python code therefore accepts data input from the user.
 * The computer also keeps track of the scores.
-* It will not let you enter same data twice. 
-* It will not let you enter erronious data, outside the digits of 1 through 5 and the word 'yes' or 'no'. 
+* It will not let you enter the same data twice. 
+* It will not let you enter erroneous data, outside the digits of 1 through 5 and the word 'yes' or 'no'. 
 
 
 ###  Features - Future Features 
@@ -51,41 +51,41 @@ I used the manual testing methods for checking my code:
 - PEP8 
 - Feeding it invalid data, outside the previosly stated bounds, to see how it responds. 
 - Use my local terminal in my IDE
-- Deploying via Heroku to see final product 
+- Deploying via Heroku to see the final product 
 
 ![contactimage](assets/GameManyErrors.png) 
 
-### Bugs deteced
+### Bugs detected
 
-- PEP8 informed of many indentation errors, most of which were resolved.
-- I previoulsy tried to add command which I had forgotten to define, therefor sending back an error.
+- I previously tried to add a command that I had forgotten to define, therefore sending back an error.
+- PEP8 informed of many indentation errors, most of which were resolved, and easy to do so. 
 
 ![contactimage](assets/GameErrors.png)
 
 ### Bugs resolved 
 
-- Fixed indent errors with PEP8
-- Made sure I had all required "def" 
+- Made sure I had all required "def" portions of the code, so that when they are called they would respond.
+- Fixed the indent errors found when I ran it through PEP8. 
 
 ![contactimage](assets/GameLessErrors.png)
 
 ### Bugs not resolved 
 
-- PEP8 stated code had too many character on some lines, but does not interfere with overall product. 
+- PEP8 stated some lines have too much "whitespace" or unnecessary lines, but it does not interfere with the over all product. 
 
 ![contactimage](assets/GameTwoErrors.png)
 
 ## Deployment 
 
-1. Go to Heroku dash board 
+1. Go to Heroku dash-board 
 2. Click on 'Create a new Heroku app'
 3. Set the build packs to Python and NodeJS in that order
-4. Link you GitHub repo to Heroku app 
+4. Link your GitHub repo to Heroku app 
 5. Click on Deploy!
 
 ## Credits 
 
-I used materials for writing game code from online source such as: 
+I used materials for writing game code from online sources such as: 
 * Code Institute 
 * Geeks For Geeks 
 * Stack Overflow
