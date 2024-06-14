@@ -86,8 +86,8 @@ I used the manual testing methods for checking my code:
 ## Credits 
 
 I used materials for writing game code from online sources such as: 
-* Code Institute 
+* Code Institute - Specifically for the inuital conecpt of a Battle Ship based game 
 * Geeks For Geeks 
-* Stack Overflow
+* Stack Overflow - Specifically for "# Game play and print instructions loop"
 * Code Review Stack Exchange  
-* Tutorials Point
+* Tutorials Point 
