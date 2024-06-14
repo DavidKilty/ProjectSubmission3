@@ -1,30 +1,30 @@
-import random
-import os
+import random # For game play 
+import os # For clearing board 
 
-BOARD_SIZE = 5
-SNAKE_LENGTHS = [2, 3]
-
-
-def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
+BOARD_SIZE = 5 # Constants
+SNAKE_LENGTHS = [2, 3] # Example of ship lengths
 
 
-def create_board(size):
-    return [['~' for _ in range(size)] for _ in range(size)]
+def clear_screen(): # Clears screen
+    os.system('cls' if os.name == 'nt' else 'clear').  
 
 
-def print_board(board):
-    print("  " + " ".join(str(i+1) for i in range(BOARD_SIZE)))
+def create_board(size): # Create board 
+    return [['~' for _ in range(size)] for _ in range(size)]  
+
+
+def print_board(board): # Show board on screen 
+    print("  " + " ".join(str(i+1) for i in range(BOARD_SIZE))) 
     for idx, row in enumerate(board):
         print(str(idx + 1) + " " + ' '.join(row))
 
 
-def place_snake(board, snake_length):
+def place_snake(board, snake_length): # Randomly place snake 
     placed = False
     while not placed:
         orientation = random.choice(['H', 'V'])
         if orientation == 'H':
-            row = random.randint(0, BOARD_SIZE - 1)
+            row = random.randint(0, BOARD_SIZE - 1) 
             col = random.randint(0, BOARD_SIZE - snake_length)
             if all(board[row][col + i] == '~' for i in range(snake_length)):
                 for i in range(snake_length):
@@ -39,28 +39,28 @@ def place_snake(board, snake_length):
                 placed = True
 
 
-def setup_board():
+def setup_board(): # Place board on screen 
     board = create_board(BOARD_SIZE)
     for snake_length in SNAKE_LENGTHS:
         place_snake(board, snake_length)
     return board
 
 
-def take_shot(board, row, col):
+def take_shot(board, row, col): # Taking shots Hit or Miss
     if board[row][col] == 'S':
-        board[row][col] = 'X'  # Crush
+        board[row][col] = 'X'  # Hit
         return True
     elif board[row][col] == '~':
         board[row][col] = 'O'  # Miss
         return False
-    return None  # Invalid step
+    return None  
 
 
-def all_snakes_crushed(board):
+def all_snakes_crushed(board): # End of game 
     return all(cell != 'S' for row in board for cell in row)
 
 
-def get_player_input(shots_taken):
+def get_player_input(shots_taken): # Avoid repeating same input 
     while True:
         try:
             coords = input("Enter row and column (e.g., 2 3): ").split()
@@ -77,7 +77,7 @@ def get_player_input(shots_taken):
             print(e)
 
 
-def computer_turn(board, shots_taken):
+def computer_turn(board, shots_taken): # Avoid computer repeating same input 
     while True:
         row = random.randint(0, BOARD_SIZE - 1)
         col = random.randint(0, BOARD_SIZE - 1)
@@ -88,14 +88,14 @@ def computer_turn(board, shots_taken):
             break
 
 
-def play_game():
+def play_game(): # Game play and print instructions loop
     player_board = setup_board()
     computer_board = setup_board()
 
     player_shots = set()
     computer_shots = set()
 
-    while True:
+    while True: 
         print("\nPlayer's Board:")
         print_board(player_board)
         print("\nComputer's Board:")
@@ -119,7 +119,7 @@ def play_game():
             print("You lost! The computer crushed all your snakes!")
             break
 
-while True:
+while True: 
     clear_screen() 
     print("Welcome to the Snake Pit.")
     print("In this game, you will play against the computer by trying to guess where they have placed their 'snakes' on their board.")
