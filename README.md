@@ -68,7 +68,7 @@ I used the manual testing methods for checking my code:
 
 ### Bugs not resolved 
 
-- PEP8 stated several lines are too long, but these are due to the comments I had to mkae abouzt the code and the istructions which are printed and are not actually code, they do not interfere with the over all product or its delivery. 
+- PEP8 stated several lines are too long, but these are due to the comments I had to make about the code and the instructions which are printed and are not actually code, they do not interfere with the over all product or its delivery. 
 
 ![contactimage](assets/GameThruValidator.png)
 
