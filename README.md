@@ -53,21 +53,18 @@ I used the manual testing methods for checking my code:
 - Use my local terminal in my IDE
 - Deploying via Heroku to see the final product 
 
-![contactimage](assets/GameManyErrors.png) 
 
 ### Bugs detected
 
 - I previously tried to add a command that I had forgotten to define, therefore sending back an error.
 - PEP8 informed of many indentation errors, most of which were resolved, and easy to do so. 
 
-![contactimage](assets/GameErrors.png)
 
 ### Bugs resolved 
 
 - Made sure I had all required "def" portions of the code, so that when they are called they would respond.
 - Fixed the indent errors found when I ran it through PEP8. 
 
-![contactimage](assets/GameLessErrors.png)
 
 ### Bugs not resolved 
 
