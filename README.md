@@ -68,9 +68,9 @@ I used the manual testing methods for checking my code:
 
 ### Bugs not resolved 
 
-- PEP8 stated some lines have too much "whitespace" or unnecessary lines, but it does not interfere with the over all product. 
+- PEP8 stated several lines are too long, but these are due to the comments I had to mkae abouzt the code and the istructions which are printed and are not actually code, they do not interfere with the over all product or its delivery. 
 
-![contactimage](assets/GameTwoErrors.png)
+![contactimage](assets/GameThruValidator.png)
 
 ## Deployment 
 
